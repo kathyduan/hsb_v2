@@ -12,6 +12,7 @@ group :development do
   gem "starter_generators", :git=> 'git://github.com/raghubetina/starter_generators.git'
 end
 
+gem 'bcrypt', platforms: :ruby
 
 
 

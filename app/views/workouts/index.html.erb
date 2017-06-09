@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h1>
+    Workouts
+    <a href="/workouts/new" class="btn btn-lg btn-success">New Workout</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Studio name</th>
+        <th>Workout type</th>
+        <th>Neighborhood</th>
+      </tr>
+
+      <% @workouts.each do |workout| %>
+      <tr>
+        <td><%= workout.studio_name %></td>
+        <td><%= workout.workout_type %></td>
+        <td><%= Neighborhood.find_by(:id => workout.neighborhood_id).try(:name) %></dd>
+        <td>
+          <a href="/workouts/<%= workout.id %>" class="btn btn-primary">Show</a>
+          <a href="/workouts/<%= workout.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_workout/<%= workout.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

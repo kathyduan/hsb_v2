@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h3><%= @workout.studio_name %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+
+      <dt>Studio name</dt>
+      <dd><%= @workout.studio_name %></dd>
+
+      <dt>Workout type</dt>
+      <dd><%= @workout.workout_type %></dd>
+
+      <dt>Address</dt>
+      <dd><%= @workout.address %></dd>
+
+      <dt>Neighborhoods</dt>
+      <dd><%= @workout.neighborhood.name %></dd>
+
+      <dt>Hsb rating</dt>
+      <dd><%= @workout.hsb_rating %></dd>
+
+      <dt>Notes</dt>
+      <dd><%= @workout.notes %></dd>
+
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/workouts" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/workouts/<%= @workout.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_workout/<%= @workout.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

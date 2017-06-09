@@ -1,0 +1,39 @@
+<div class="page-header">
+  <h3>Neighborhood <%= @neighborhood.name %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+
+      <h4>Workouts</h4>
+      <li><% @neighborhood.workouts.each do |workout| %>
+            <%= workout.studio_name %>
+      <% end %>
+      </li>
+
+
+      <h4>Restaurants<h4>
+       <%@neighborhood.restaurants.each do |restaurant|%>
+        <li>  <%= restaurant.restaurant_name %>
+      </li>
+      <% end %>
+
+      <h4>Notes</h4>
+      <li><%= @neighborhood.notes %></li>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/neighborhoods" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/neighborhoods/<%= @neighborhood.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_neighborhood/<%= @neighborhood.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
